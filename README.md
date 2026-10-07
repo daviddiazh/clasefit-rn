@@ -56,7 +56,7 @@ npm test -- --runInBand
 ![Demo de ClaseFit](./demo/demo.png)
 
 ### Video de la demo
-<video src="./demo/demo.mov" controls muted playsinline width="800"></video>
+<video src="./demo/demo.mp4" controls muted playsinline width="800"></video>
 
 ## Notas
 - El proyecto está orientado a un MVP local sin backend real.
