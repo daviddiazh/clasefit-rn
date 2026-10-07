@@ -1,15 +1,17 @@
 {
   "expo": {
-    "name": "rn-openspec-test",
-    "slug": "rn-openspec-test",
+    "name": "ClaseFit",
+    "slug": "clasefit-daviddiazh",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.keppri.clasefit.daviddiazh"
     },
     "android": {
+      "package": "com.keppri.clasefit.daviddiazh",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -20,6 +22,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "17844323-3a00-40be-be57-c2b714d76e60"
+      }
+    },
+    "owner": "daviddiazh"
   }
 }
