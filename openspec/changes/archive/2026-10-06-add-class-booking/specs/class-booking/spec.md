@@ -6,6 +6,14 @@ Permite al socio reservar una clase disponible sin exceder la capacidad ni dupli
 
 ## ADDED Requirements
 
+### Requirement: A user can view upcoming classes
+The system SHALL show only classes scheduled for today, tomorrow, or the day after tomorrow, ordered by date and time, excluding classes that have already started. Each class card SHALL display the class name, day, time, instructor, and either the available capacity or "Llena" when no seats remain.
+
+#### Scenario: upcoming classes are listed with availability
+- **WHEN** the user opens the classes screen
+- **THEN** the system shows only upcoming classes for the next three days, ordered by date and time, and excludes classes that have already started
+- **AND** each class shows the name, day, time, instructor, and remaining capacity or a "Llena" state
+
 ### Requirement: A valid class booking can be created
 The system SHALL create a booking for a selected class when the class has remaining capacity, the user has not already booked it, and the user has not reached the daily booking limit.
 

@@ -7,6 +7,8 @@ Este cambio se desarrolla en un MVP frontend-only con React Native, datos locale
 ## Goals / Non-Goals
 
 **Goals:**
+- Permitir ver las próximas clases (hoy, mañana y pasado mañana), ordenadas por fecha y hora, sin incluir clases ya empezadas.
+- Mostrar nombre, día, hora, instructor y cupos disponibles, incluyendo el estado "Llena" cuando no haya cupos.
 - Permitir reservar una clase disponible con feedback inmediato.
 - Validar las reglas RN-01, RN-02 y RN-03 antes de confirmar el cupo.
 - Mantener la lógica de negocio separada de la UI para facilitar tests.
@@ -18,7 +20,8 @@ Este cambio se desarrolla en un MVP frontend-only con React Native, datos locale
 
 ## Decisions
 
-- Se mantendrá la estructura principal en `src/context`, `src/utils`, `src/hooks`, `src/types` y componentes de pantalla. El estado global quedará en un contexto con el perfil del usuario (`Laura Gómez`, id del socio) y las reservas confirmadas actuales del socio.
+- Se mantendrá la estructura principal en `src/context`, `src/utils`, `src/hooks`, `src/types` y componentes de pantalla. El estado global quedará en un contexto con el perfil del usuario (`Laura Gómez`, id del socio), la lista de clases y las reservas confirmadas actuales del socio.
+- La vista principal para `view_upcoming_classes` mostrará el conjunto de clases con `diaOffset` entre 0 y 2, ordenadas por fecha y hora, ocultando las que ya iniciaron y marcando el estado de cada una con cupos disponibles o "Llena".
 - La lógica de dominio se encapsulará en funciones puras bajo `src/utils/classBooking.ts`, con validaciones para capacidad disponible, clase ya reservada y límite máximo de dos reservas por día. Ese módulo usará los datos del perfil y la lista de reservas actuales como parte del contexto, sin mezclar UI con lógica.
 - El cálculo de la disponibilidad se hará sobre la capacidad base de la clase y las reservas ya confirmadas del socio, usando `diaOffset` y la zona horaria `America/Bogota` para determinar el día real de la clase.
 - La capa de UI solo manejará el evento de reservar y mostrará el mensaje de éxito o error; no debería decidir la regla de negocio directamente.

@@ -6,6 +6,7 @@ Laura necesita reservar una clase desde el celular para asegurar su cupo sin dep
 
 ## What Changes
 
+- Permitir ver las próximas clases del socio (hoy, mañana y pasado mañana), ordenadas por fecha y hora, con información de cupos y estado "Llena" cuando no haya disponibilidad.
 - Añadir el flujo de reserva de una clase disponible desde la vista de clases del gimnasio.
 - Validar que la clase tenga cupos antes de registrar la reserva.
 - Impedir reservar la misma clase dos veces para el mismo socio.
@@ -17,6 +18,7 @@ Laura necesita reservar una clase desde el celular para asegurar su cupo sin dep
 
 ### New Capabilities
 
+- `view_upcoming_classes`: listado de clases próximas para que el socio pueda elegir a cuál asistir.
 - `class-booking`: flujo de reserva de clases para un socio autenticado localmente en el MVP.
 
 ## Impact
